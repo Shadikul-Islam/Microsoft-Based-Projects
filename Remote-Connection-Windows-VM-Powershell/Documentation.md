@@ -3,7 +3,7 @@
 **Follow the following steps:**
 
 1. Add the port **5985** into the Inbound Port Rules of Azure/AWS/where your VM created.
-2. You need to RDP that VM for the first time to do this following things:
+2. You need to do RDP (Remote Desktop Connection) on that VM for the first time. After going inside of that VM then open Powershell as Administrator Mode then do as follows. You will never have to do this again.
    - Enable Powershell Remote access:
    ```PowerShell
      Enable-PSRemoting -force

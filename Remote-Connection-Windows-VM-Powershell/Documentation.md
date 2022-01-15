@@ -18,3 +18,7 @@
     <img src="https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Remote-Connection-Windows-VM-Powershell/Images/Windows%20Defender%20Firewall.png" alt="Windows Defender Firewall">
 
 3. Now [click here](https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Remote-Connection-Windows-VM-Powershell/Script/Remote-Connection-Windows-VM.ps1) to show the script. Copy the script and Provide the **VM-Username**, **VM-Passoword**, **IP-Address**. Run it in **Powershell ISE/Powershell**.
+
+4. You are now connected to that VM in powershell. You can now do anything on that VM from your local PC Powershell. You will be seen like this.
+    
+    <img src="https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Remote-Connection-Windows-VM-Powershell/Images/After-Remote-Connection.png" alt="After Remote Connection">

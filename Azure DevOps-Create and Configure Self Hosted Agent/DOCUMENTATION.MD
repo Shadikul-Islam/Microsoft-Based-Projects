@@ -1,5 +1,6 @@
 ## In this documentation I will describe how to Create and Configure a Self-Hosted-Agent in Azure DevOps (Manually)
 
+### How to Create and Configure a Self-Hosted-Agent
 1. Go to [Azure DevOps Portal](https://dev.azure.com/). Click the organization name and go inside of your desired organization. 
 If you don't have any organization then you can create a new organization by clicking **New Organization** option.
 
@@ -35,7 +36,7 @@ If you don't have any organization then you can create a new organization by cli
 8. You can notice that Instruction is given for Windows, Mac, Linux. Since we will configure for Windows machine so we will follow the Windows instructions.
    - At first I copied the link and open the link from browser to download the agent files. Here is the download file. <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-8.png" alt="Download the Agent Files"> <br>
-   - Open the powershell and Run this Script.
+   - Open the powershell as administrator mode and Run this Script.
      ```PowerShell
      mkdir agent ; cd agent
      Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$HOME\Downloads\vsts-agent-win-x64-2.196.2.zip", "$PWD")
@@ -53,4 +54,36 @@ If you don't have any organization then you can create a new organization by cli
        <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-10.png" alt="PAT Creation Image">
        <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-11.png" alt="PAT Creation Image">
        <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-12.png" alt="PAT Creation Image">
-     - 
+     - Enter agent pool: Enter the agent pool name that you created earlier. In my case, it was **Self-Hosted-Agent-Pool**.
+     - Enter agent name: I provide this name **Self-Agent**. You can give in your choice. If you give enter without providing anything then it will take automatically by its default name what it suggests.
+     - Enter work folder: I pressed enter to keep its default value.
+     - Enter run agent as service: Y
+     - Enter User account to use for the service: Press Enter
+     - Enter whether to prevent service starting immediately after configuration is finished: Press Enter cause I want to start it now.
+       <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-13.png" alt="Agent Configuration Image">
+9. To check the agent from Azure DevOps portal go to Project Settings → Agent Pool → Click the Agent Pool Name → Click Agent.
+   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-14.png" alt="Check Agent Image">
+   
+### How to remove the Agent:
+1. Go to the Agent folder where you unzip the Agent files. In my case it is **C:\Users\Sadik\agent**. click Windows file explorer path and write cmd then hit enter to open CMD in this path. 
+   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-15.png" alt="Open CMD Image">
+2. Now run this command.
+   ```PowerShell
+   config.cmd remove
+   ```
+   After successfully running this command, you can see it like this.
+   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-16.png" alt="Remove Agent Image">
+   
+### Troubleshoot Issues:
+1. If you see that your agent is offline then you can solve this issue by running a command.
+   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-17.png" alt="Offline Agent Image">
+2. Just run this command to online your agent.
+   ```PowerShell
+   .\run.cmd
+   ```
+   After successfully running this command, you can see it like this.
+   
+   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-18.png" alt="Online Agent Image">
+   Now your Agent will be online to check it follow the step 9.
+   
+   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-14.png" alt="Online Agent Image">

@@ -22,8 +22,8 @@ An agent that you set up and manage on your own to run jobs is a self-hosted age
 ### <a name="03">When we need Self-Hosted Agent?</p>
 Most of the times, using the Microsoft hosted Agents should be good. However, below are the scenarios in which you should look at configuring Self-Hosted Agents
 - If 10GB free space in the Virtual Machine (Agent) is not sufficient for your build needs.
-- When you want a Virtual Machine, whose capacity is greater than of Standard DS2V2
-- When you would like to use a Software that is not available in the Microsoft hosted Build Agents
+- When you want a Virtual Machine, whose capacity is greater than of Standard DS2V2.
+- When you would like to use a Software that is not available in the Microsoft hosted Build Agents.
 
 ### <a name="04">How to Create and Configure a Self-Hosted-Agent</a>
 1. Go to [Azure DevOps Portal](https://dev.azure.com/). Click the organization name and go inside of your desired organization. 
@@ -112,4 +112,6 @@ If you don't have any organization then you can create a new organization by cli
    <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-18.png" alt="Online Agent Image"> <br> <br>
    Now your Agent will be online to check it follow the [step 9](#9). <br>
    
-   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-14.png" alt="Online Agent Image">
+   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-14.png" alt="Online Agent Image"> <br>
+   
+#### That’s it. We have learnt how to Create, Configure, Delete and Troubleshoot an Agent in Azure DevOps. Happy Learning.

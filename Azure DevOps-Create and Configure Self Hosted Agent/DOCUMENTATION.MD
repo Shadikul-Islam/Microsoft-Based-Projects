@@ -1,4 +1,4 @@
-## In this documentation I will describe how to Create and Configure a Self-Hosted-Agent in Azure DevOps Manually
+## In this documentation I will describe how to Create and Configure a Self-Hosted-Agent in Azure DevOps (Manually)
 
 1. Go to [Azure DevOps Portal](https://dev.azure.com/). Click the organization name and go inside of your desired organization. 
 If you don't have any organization then you can create a new organization by clicking **New Organization** option.
@@ -27,3 +27,30 @@ If you don't have any organization then you can create a new organization by cli
    You can grant access permission to all pipelines. Now click **Create**. <br> <br>
    
    <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-6.png" alt="Create Agent Pools Image">
+   
+7. Click the newly created Agent Pool and go inside Click New Agent to create a new Agent. After clicking New Agent a page will appear and there give instructions on how to create an Agent. We need to follow the instruction.
+
+   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-7.png" alt="Agent Create Image">
+   
+8. You can notice that Instruction is given for Windows, Mac, Linux. Since we will configure for Windows machine so we will follow the Windows instructions.
+   - At first I copied the link and open the link from browser to download the agent files. Here is the download file. <br> <br>
+     <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-8.png" alt="Download the Agent Files"> <br>
+   - Open the powershell and Run this Script.
+     ```PowerShell
+     mkdir agent ; cd agent
+     Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$HOME\Downloads\vsts-agent-win-x64-2.196.2.zip", "$PWD")
+     ```
+     <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-9.png" alt="Run Command Image">
+     
+   - This command will be created a new folder named agent and will go inside the agent folder then extract the zip file which downloaded.
+   - Now run this command. This command will execute the **config.cmd** file.
+     ```PowerShell
+     .\config.cmd
+     ```
+   - When you run this command you need to give these following information.
+     - Enter server URL: https://dev.azure.com/YourOrganizationName
+     - You need to create **Personal Access Token (PAT)**. To create this go to [Azure DevOps](https://dev.azure.com/) → My Account → Personal Access Token → New Token → Provide the Name → Set Scope: Full Access → Create → Now copy the PAT and paste it into PowerShell.
+       <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-10.png" alt="PAT Creation Image">
+       <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-11.png" alt="PAT Creation Image">
+       <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-12.png" alt="PAT Creation Image">
+     - 

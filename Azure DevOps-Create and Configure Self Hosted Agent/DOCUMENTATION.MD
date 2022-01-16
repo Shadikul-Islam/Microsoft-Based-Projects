@@ -1,6 +1,27 @@
-## In this documentation I will describe how to Create and Configure a Self-Hosted-Agent in Azure DevOps (Manually)
+## <p align=left>How to Create, Configure, Delete a Self-Hosted-Agent in Azure DevOps (Manually) <br> <br> </p>
+| **SL** | **Topic** |
+| --- | --- |
+| 01 | [What is Agent?](#01) |
+| 02 | [What is Self-Hosted Agent?](#02) |
+| 03 | [When we need Self-Hosted Agent?](03) |
+| 04 | [How to Create and Configure a Self-Hosted-Agent](#04) |
+| 05 | [How to Delete Self Hosted Agent](#05) |
+| 06 | [Troubleshoot Common Issues](#06) |
 
-### How to Create and Configure a Self-Hosted-Agent
+### <a name="01">What is Agent?</a>
+Agent is a server with the appropriate Operating System and the tools installed and configured.
+Azure DevOps supports the following two types of Agents
+ - **Microsoft Hosted Agent** – These agents are managed by Microsoft
+ - **Self-Hosted Agents** – These are created and managed by the Customer.
+
+Here I will discuss about the Self-Hosted Agents.
+
+### <a name="02">What is Self-Hosted Agent?</a>
+An agent that you set up and manage on your own to run jobs is a self-hosted agent. You can use self-hosted agents in Azure Pipelines or Azure DevOps Server, formerly named Team Foundation Server (TFS). Self-hosted agents give you more control to install dependent software needed for your builds and deployments
+
+### <a name="03">When we need Self-Hosted Agen?</p>
+
+### <a name="04">How to Create and Configure a Self-Hosted-Agent</a>
 1. Go to [Azure DevOps Portal](https://dev.azure.com/). Click the organization name and go inside of your desired organization. 
 If you don't have any organization then you can create a new organization by clicking **New Organization** option.
 
@@ -63,8 +84,9 @@ If you don't have any organization then you can create a new organization by cli
        <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-13.png" alt="Agent Configuration Image">
 9. To check the agent from Azure DevOps portal go to Project Settings → Agent Pool → Click the Agent Pool Name → Click Agent.
    <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-14.png" alt="Check Agent Image">
-   
-### How to remove the Agent:
+ 
+### <a name="05">How to Delete Self Hosted Agent:</a>
+
 1. Go to the Agent folder where you unzip the Agent files. In my case it is **C:\Users\Sadik\agent**. click Windows file explorer path and write cmd then hit enter to open CMD in this path. 
    <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-15.png" alt="Open CMD Image">
 2. Now run this command.
@@ -74,7 +96,7 @@ If you don't have any organization then you can create a new organization by cli
    After successfully running this command, you can see it like this.
    <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-16.png" alt="Remove Agent Image">
    
-### Troubleshoot Issues:
+### <a name="06">Troubleshoot Common Issues:</a>
 1. If you see that your agent is offline then you can solve this issue by running a command.
    <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-17.png" alt="Offline Agent Image">
 2. Just run this command to online your agent.

@@ -51,37 +51,37 @@ If you don't have any organization then you can create a new organization by cli
 3. At first we need to add the script into Azure Repos. From the left side menu of the page, clcik on the **Repos** to go Repository page. 
    <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-4.png" alt="Repository"> <br><br>
 
-4. You can select a existing repository or you can create a new repository or you can import a repository. If you want to create a new Repository then click the **New Repository**
+4. You can select a existing repository or you can create a new repository or you can import a repository. If you want to create a new Repository then click the **New Repository** <br>
    <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-3.png" alt="Repository"> <br><br>
-4. Now select your new created repository or existing repository. Now you need to add files in this repository. You can **Clone** your script file here from git. You can create a new file here or can **upload** new file here. I am going to upload file here. Click 3 Dots of the Right side of the page and select **Upload Files** option.
+5. Now select your new created repository or existing repository. Now you need to add files in this repository. You can **Clone** your script file here from git. You can create a new file here or can **upload** new file here. I am going to upload file here. Click 3 Dots of the Right side of the page and select **Upload Files** option. <br><br>
    <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-1.png" alt="Upload Files"> <br><br>
    Now browse the file from file explorer or drag and drop your file here. Add comment and select branch. Now click **Commit**.
-   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-2.png" alt="Upload Files"> <br><br>
-5. Now go to pipeline by clicking **Pipeline** on the left side of the page. Now you need to follow this following setps.
-   - To create a new Pipeline clcik **New Pipeline**
+<img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-2.png" alt="Upload Files"> <br><br>
+6. Now go to pipeline by clicking **Pipeline** on the left side of the page. Now you need to follow this following setps.
+   - To create a new Pipeline clcik **New Pipeline** <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-5.png" alt="Pipeline"> <br><br>
-   - I want to create pipeline without YAML. You can create YAML if you want. Now select the **Use Classic Editor** to create a pipeline without YAML.
+   - I want to create pipeline without YAML. You can create YAML if you want. Now select the **Use Classic Editor** to create a pipeline without YAML. <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-6.png" alt="Pipeline"> <br><br>
-   - Now you need to select the source where your script located. I uploaded my script in Azure Repos so I am selecting **Azure Repos Git** and click **Continue**.
+   - Now you need to select the source where your script located. I uploaded my script in Azure Repos so I am selecting **Azure Repos Git** and click **Continue**. <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-7.png" alt="Pipeline"> <br><br>
-   - Now click on **Empty Job**. We will add our job later.
+   - Now click on **Empty Job**. We will add our job later. <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-8.png" alt="Pipeline"> <br><br>
-   - In this page you can give a name of this project. I gave name Powershell Script Run. You need to select your Agent. If your agent Hosted from Azure then Select **Azure Pipeline**. My agent is self-hosted agent whcih I have created already before named **Self-Hosted-Agent-Pool**. So I selected that agent. If you don't know how to create a self hosted agent you can read my another documentation by [clicking here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/DOCUMENTATION.MD).
+   - In this page you can give a name of this project. I gave name Powershell Script Run. You need to select your Agent. If your agent Hosted from Azure then Select **Azure Pipeline**. My agent is self-hosted agent whcih I have created already before named **Self-Hosted-Agent-Pool**. So I selected that agent. If you don't know how to create a self hosted agent you can read my another documentation by [clicking here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/DOCUMENTATION.MD).<br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-9.png" alt="Pipeline"> <br><br>
-   - Now click on the **Agent job 1 + button**. 
+   - Now click on the **Agent job 1 + button**. <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-10.png" alt="Pipeline"> <br><br>
-     Write Powershell on the search box and select **Powershell** and click **Add**.
+     Write Powershell on the search box and select **Powershell** and click **Add**. <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-11.png" alt="Pipeline"> <br><br>
-     After clicking **Add** button Powershell wiil be added in Agent job. Click on **Powershell Script**.
+     After clicking **Add** button Powershell wiil be added in Agent job. Click on **Powershell Script**. <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-12.png" alt="Pipeline"> <br><br>
-     Here you can change the disply name. You need to select the scipt path which you uploaded in Azure Repos.
+     Here you can change the disply name. You need to select the scipt path which you uploaded in Azure Repos. <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-13.png" alt="Pipeline"> <br><br>
-     After selecting the script you need to click on **Save & Queue** then click on **Save & Run**
-   - After clicking on **Save & Run** your script will be started to run. You will be see like this.
+     After selecting the script you need to click on **Save & Queue** then click on **Save & Run**.
+   - After clicking on **Save & Run** your script will be started to run. You will be see like this. <br> <br> 
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-14.png" alt="Pipeline"> <br><br>
-   - Click on **Agent Job 1** . You can see full log of it. To shwo the Powershell log just click on the **Powershell Script**. You can see the raw log by clicking on the **View Raw Log**
+   - Click on **Agent Job 1** . You can see full log of it. To shwo the Powershell log just click on the **Powershell Script**. You can see the raw log by clicking on the **View Raw Log**. <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-15.png" alt="Pipeline"> <br><br>
-   - If your script don't run seccussfully then you can see a **Red Cross Sign**. You can check the log like the previous step.
+   - If your script don't run seccussfully then you can see a **Red Cross Sign**. You can check the log like the previous step. <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-16.png" alt="Pipeline"> <br><br>
      
 #### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learnt how to Run Powershell Script in Azure Pipeline in Azure DevOps. Happy Learning.  :diamond_shape_with_a_dot_inside: &nbsp;

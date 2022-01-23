@@ -8,7 +8,7 @@
 | 05 | [What is Powershell Scripting?](#05) |
 | 06 | [How to Run Powershell Script in Azure Pipeline?](#06) |
 
-### <a name="01">:diamond_shape_with_a_dot_inside: &nbsp;What is Azure DevOps?</a>
+### <a name="01">:diamond_shape_with_a_dot_inside: &nbsp;What is Azure DevOps?</a> 
 Azure DevOps is a service offered by Microsoft based on the Azure cloud computing platform that provides a complete set of tools to manage software development projects. It consists of:
 - Five key services
 - An extensive marketplace that contains extensions to further extend the Azure DevOps platform and integrate with third-party services

@@ -67,11 +67,11 @@ Invoke-Command -Session $session -ScriptBlock { Add-LocalGroupMember -Group Admi
 You can also get this script **[here.](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-Create%20Local%20User%20of%20Windows%20Machine%20Using%20Azure%20Pipeline/Script/Create%20Local%20User%20Using%20Powershell%20from%20Azure%20Pipeline.ps1)**
 
 ### <a name="06">:diamond_shape_with_a_dot_inside: &nbsp;Prepare an Azure Pipeline to Run This Script</a>
-Now you need to prepare an Azure Pipeline to run this script. Go to Go to [Azure DevOps Portal](https://dev.azure.com/) --> Click Project Name --> Azure Repos --> Upload your script in Azure Repos --> --> Pipelines --> New Pipeline and Configure that pipeline using that repos. I already created a document how to do that. you can **Read this Documentation for more details about [How to Run Powershell Script in Azure Pipeline in Azure DevOps](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Documentation.md)**
+Now you need to prepare an Azure Pipeline to run this script. Go to Go to [Azure DevOps Portal](https://dev.azure.com/) --> Click Project Name --> Azure Repos --> Upload your script in Azure Repos --> --> Pipelines --> New Pipeline and Configure that pipeline using that repos. I already created a document how to do that. you can **Read this Documentation for more details about [How to Run Powershell Script in Azure Pipeline in Azure DevOps](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Documentation.md)**.
 
 ### <a name="07">:diamond_shape_with_a_dot_inside: &nbsp; Check the Local User that You Added</a>
 1. Go to that Windows Machine Via RDP (Remote Desktop Connection). Open Windows Powershell. Run this command ``` get-localuser ```. Now you will see your all users.
-2. Or you can establish a remote connection on that VM from your local PC Powershell. To do that, Open your PC Powershell --> Run this Script
+2. Or you can establish a remote connection on that VM from your local PC Powershell. To do that, Open your PC Powershell --> Run this Script.
 
 ```PowerShell
 $myPwd=<"VM-Password">

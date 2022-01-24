@@ -97,7 +97,7 @@ $downloadUrl2=<"URL-of-the-Office365-configuration.xml-File">
  ```
  
 Here ```$downloadUrl=<"URL-of-the-First-Script">``` means, At first, You need to download the Notepad++, Office Setup, and Configuration file from their official site. Then keep those files in any cloud storage. I kept those files in **Azure Blob Storage**. Then I generated a [shared access signature (SAS)](#03) and put that URL here.
-
+ 
 **Second Script:**
 
 ```PowerShell

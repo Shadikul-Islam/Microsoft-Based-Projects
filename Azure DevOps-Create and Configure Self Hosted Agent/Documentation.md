@@ -29,7 +29,7 @@ Most of the times, using the Microsoft hosted Agents should be good. However, be
 1. Go to [Azure DevOps Portal](https://dev.azure.com/). Click the organization name and go inside of your desired organization page. 
 If you don't have any organization then you can create a new organization by clicking **New Organization** option.
 
-   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-1.png" alt="Organization Image">
+   <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-1.png" alt="Organization Image"> 
 
 2. I am going to my existing organization named **MyOrganization01.** Now we need to go inside to a project page. If you don't have any projects create a new project by clicking **New Project** option.
 

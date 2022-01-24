@@ -28,7 +28,7 @@ Pipelines are the CI/CD tool that facilitates automated building, testing, and d
 These pipelines are easily extensible through the extensions available in the marketplace. Besides, they support advanced workflows that can be used to facilitate:
 - Multi-phase builds
 - Test integrations
-- Custom reporting functions
+- Custom reporting functions 
 
 ### <a name="04">:diamond_shape_with_a_dot_inside: &nbsp;What is Azure Repository (Repos)?</a>
 Azure Repository is a set of version control tools that we can use to manage our code. In case if we are entirely new to version control, then version control enables us to track changes we make in our code over time. There are so many software that is available in the market to enable version control on our code. We can use the version control system to keep track of each change done by each developer, safely merge them, test the changes, and publish the change into production.

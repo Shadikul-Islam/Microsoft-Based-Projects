@@ -1,4 +1,4 @@
-## <p align=left>Install Software in Azure VM Without Going Inside to VM Using Your Local PC Powershell <br> <br> </p>
+## <p align=left>Install Software in Azure VM Without Going Inside to VM Using Your Local PC Powershell <br> <br> </p> 
 | **SL** | **Topic** |
 | --- | --- |
 | 01 | [What is Azure Virtual Machine?](#01) |

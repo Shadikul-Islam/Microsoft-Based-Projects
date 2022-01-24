@@ -1,4 +1,4 @@
-## <p align=left>Create Azure VM from Your Local PC Powershell<br> <br> </p>
+## <p align=left>Create Azure VM from Your Local PC Powershell<br> <br> </p> 
 | **SL** | **Topic** |
 | --- | --- |
 | 01 | [What is Azure Virtual Machine?](#01) |

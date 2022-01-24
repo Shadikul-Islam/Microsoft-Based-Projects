@@ -1,4 +1,4 @@
-## Establish Remote Connection to Windows VM Using Powershell Script.
+## Establish Remote Connection to Windows VM Using Powershell Script
 
 **Follow the following steps:**
 

@@ -77,7 +77,7 @@ After running this script, you will see a pop-up window that will ask for new VM
 <br> <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Create%20Azure%20VM%20Using%20Powershell%20Script/Images/Image-1.png" alt="VM Credential"> <br><br>
 After providing the credential you can see that your VM is started to create. When it will be 100% done then your VM will be created successfully.
 <br> <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Create%20Azure%20VM%20Using%20Powershell%20Script/Images/Image-2.png" alt="VM Creating"> <br><br>
-<img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Create%20Azure%20VM%20Using%20Powershell%20Script/Images/Image-3.png" alt="VM Creating"> <br><br>
+<img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Create%20Azure%20VM%20Using%20Powershell%20Script/Images/Images-3.png" alt="VM Creating"> <br><br>
 Now go to [Azure Portal Virtual Machine Page](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines), you will see the VM named MyNewVM. Just click on it and on this page you will see all the details about this VM.
 <br> <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Create%20Azure%20VM%20Using%20Powershell%20Script/Images/Image-4.png" alt="VM Azure Portal"> <br><br>
 

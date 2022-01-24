@@ -20,8 +20,6 @@ The Custom Script Extension downloads and runs scripts on Azure virtual machines
 
 The Custom Script Extension integrates with Azure Resource Manager templates. You can also run it by using the Azure CLI, PowerShell, the Azure portal, or the Azure Virtual Machines REST API.
 
-This article details how to use the Custom Script Extension by using the Azure PowerShell module and Azure Resource Manager templates. It also provides troubleshooting steps for Windows systems.
-
 ### <a name="03">:diamond_shape_with_a_dot_inside: &nbsp;What is Shared Access Signature (SAS)?</a>
 A shared access signature (SAS) is a URI that grants restricted access to an Azure Storage blob. Use it when you want to grant access to storage account resources for a specific time range without sharing your storage account key. You can read this [Microsoft documentation](https://docs.microsoft.com/en-us/rest/api/storageservices/create-account-sas?redirectedfrom=MSDN) to learn more.
 
@@ -72,7 +70,7 @@ We will install this following software.
 - Notepad++
 - Microsoft Office365
 
-You need two scripts to install this application. One script will connect to the Azure VM which the help of Azure Custom Script Extension and another script will download and install the software.
+You need two scripts to install those application. One script will connect to the Azure VM with the help of Azure Custom Script Extension and another script will download and install the software.
 
 **First Script:**
 
@@ -84,7 +82,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 mkdir C:\Software\Notepad++
 cd C:\Software\Notepad++
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$downloadUrl=<"URL-of-the-First-Script">
+$downloadUrl=<"URL-of-the-Notepad++ .exe-File">
 Invoke-RestMethod $downloadUrl -OutFile ".\npp.exe"
 Start-Process -FilePath ".\npp.exe" -ArgumentList '/S' -Verb runas -Wait
 
@@ -92,13 +90,13 @@ Start-Process -FilePath ".\npp.exe" -ArgumentList '/S' -Verb runas -Wait
 cd C:\Software
 mkdir Office365
 cd C:\Software\Office365
-$downloadUrl=<"URL-of-the-First-Script">
+$downloadUrl=<"URL-of-the-Office365-Setup.exe-File">
 Invoke-RestMethod $downloadUrl -OutFile ".\configuration.xml"
-$downloadUrl2=<"URL-of-the-First-Script">
+$downloadUrl2=<"URL-of-the-Office365-configuration.xml-File">
 .\setup.exe /configure .\configuration.xml
  ```
  
- Here, ```$downloadUrl=<"URL-of-the-First-Script"> ``` At first, You need to download the Notepad++, Office Setup, and Configuration file. Then keep those files in any storage. I kept those files in Azure Blob Storage. Then I generated a shared access signature (SAS) and put that URL here.
+Here ```$downloadUrl=<"URL-of-the-First-Script">``` means, At first, You need to download the Notepad++, Office Setup, and Configuration file from their official site. Then keep those files in any cloud storage. I kept those files in **Azure Blob Storage**. Then I generated a [shared access signature (SAS)](#03) and put that URL here.
 
 **Second Script:**
 
@@ -111,11 +109,11 @@ Set-AzVMCustomScriptExtension -ResourceGroupName Custom_Script_Extension_Resourc
     -Name "CustomScriptExtension"
  ```
 
- Here ```$downloadUrl=<"URL-of-the-First-Script"> ``` Means, You need to upload your first script and put the URL there. 
+ Here ```$downloadUrl=<"URL-of-the-First-Script">``` means, You need to upload your first script any cloud storage. I kept the **[Script-1.ps1](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/tree/master/Install%20Software%20in%20Azure%20VM%20Without%20Going%20Inside%20to%20VM%20Using%20Powershell/Script)** file in **Azure Blob Storage**. Then I generated a [shared access signature (SAS)](#03) and put that URL here.
  
 **You can find the script file [here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/tree/master/Install%20Software%20in%20Azure%20VM%20Without%20Going%20Inside%20to%20VM%20Using%20Powershell/Script)**.
 
-Now run the script from your local PC Powershell or Powershell ISE. After completing the running then Copy the IP of that VM and visit the browser. You will see an IIS default site. Now open Remote Desktop Connection and RDP that VM and you can see the notepad++ and Office 365 application Word, Excel, Powerpoint.
+Now run the script from your local PC Powershell or Powershell ISE. After completing the running then Copy the IP of that VM and visit the browser. You will see an IIS default site. Now open Remote Desktop Connection and RDP that VM and you can see the notepad++ and Office 365 application Word, Excel, Powerpoint and other applications.
  
  
  

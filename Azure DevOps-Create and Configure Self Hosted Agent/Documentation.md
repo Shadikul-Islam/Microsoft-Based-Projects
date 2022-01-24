@@ -4,7 +4,7 @@
 | 01 | [What is Agent?](#01) |
 | 02 | [What is Self-Hosted Agent?](#02) |
 | 03 | [When we need Self-Hosted Agent?](#03) |
-| 04 | [How to Create and Configure a Self-Hosted Agent](#04) |
+| 04 | [How to Create and Configure a Self-Hosted Agent](#04) | 
 | 05 | [How to Delete Self-Hosted Agent](#05) |
 | 06 | [Troubleshoot Common Issues](#06) |
 

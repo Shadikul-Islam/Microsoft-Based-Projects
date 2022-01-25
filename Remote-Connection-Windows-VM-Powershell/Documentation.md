@@ -26,4 +26,4 @@
 In this way, you can establish a remote connection to any windows VM using PowerShell scripting.
 
 
-#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learnt how to establish remote connection to windows VM using Powershell script. Happy Learning. :diamond_shape_with_a_dot_inside: &nbsp;
+#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learned how to establish remote connection to windows VM using Powershell script. Happy Learning. :diamond_shape_with_a_dot_inside: &nbsp;

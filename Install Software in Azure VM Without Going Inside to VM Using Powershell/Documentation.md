@@ -117,7 +117,7 @@ Now run the script from your local PC Powershell or Powershell ISE. After comple
  
  
  
-#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learnt How to Install Software in Azure VM Without Going Inside to VM Using Your Local PC Powershell. :diamond_shape_with_a_dot_inside: &nbsp;
+#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learned How to Install Software in Azure VM Without Going Inside to VM Using Your Local PC Powershell. :diamond_shape_with_a_dot_inside: &nbsp;
  
 #### :diamond_shape_with_a_dot_inside: &nbsp;Happy Learning. :diamond_shape_with_a_dot_inside: &nbsp;
  

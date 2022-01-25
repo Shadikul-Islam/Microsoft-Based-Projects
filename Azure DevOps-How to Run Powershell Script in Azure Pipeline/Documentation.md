@@ -84,4 +84,4 @@ If you don't have any organization then you can create a new organization by cli
    - If your script dones't run successfully then you can see a **Red Cross Sign**. You can check the raw log for more details and resolve it by changing your script. Don't forget to update your script in Azure Repos after modification of the script. <br> <br>
      <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-How%20to%20Run%20Powershell%20Script%20in%20Azure%20Pipeline/Images/Image-16.png" alt="Pipeline"> <br><br>
      
-#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learnt how to Run Powershell Script in Azure Pipeline in Azure DevOps. Happy Learning.  :diamond_shape_with_a_dot_inside: &nbsp;
+#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learned how to Run Powershell Script in Azure Pipeline in Azure DevOps. Happy Learning.  :diamond_shape_with_a_dot_inside: &nbsp;

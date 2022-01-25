@@ -1,4 +1,4 @@
-## <p align=center>How to Create, Configure, Delete and Troubleshoot Common Issue of a Self-Hosted-Agent in Azure DevOps <br> <br> </p>
+## <p align=center>How to Create, Configure, Delete and Troubleshoot Common Issue of a Self-Hosted Agent in Azure DevOps <br> <br> </p>
 | **SL** | **Topic** |
 | --- | --- |
 | 01 | [What is Agent?](#01) |
@@ -114,4 +114,4 @@ If you don't have any organization then you can create a new organization by cli
    
    <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Work/blob/master/Azure%20DevOps-Create%20and%20Configure%20Self%20Hosted%20Agent/Images/Image-14.png" alt="Online Agent Image"> <br>
    
-#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learnt how to Create, Configure, Delete and Troubleshoot an Agent in Azure DevOps. Happy Learning.  :diamond_shape_with_a_dot_inside: &nbsp;
+#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learned how to Create, Configure, Delete and Troubleshoot an Agent in Azure DevOps. Happy Learning.  :diamond_shape_with_a_dot_inside: &nbsp;

@@ -83,4 +83,4 @@ Enter-PSSession -ComputerName <VM-IP-Address> -Credential $credentials
 You will be on that VM now. Run this command ``` get-localuser ```. Now you will see your all users.<br><br>
 <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20DevOps-Create%20Local%20User%20of%20Windows%20Machine%20Using%20Azure%20Pipeline/Images/Image-1.png" alt="User Showing"> <br><br>
 
-#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learnt How to Create Local User of Windows Machine Using Azure Pipeline. Happy Learning.  :diamond_shape_with_a_dot_inside: &nbsp;
+#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learned How to Create Local User of Windows Machine Using Azure Pipeline. Happy Learning.  :diamond_shape_with_a_dot_inside: &nbsp;

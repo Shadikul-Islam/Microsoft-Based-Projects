@@ -84,4 +84,4 @@ Now go to [Azure Portal Virtual Machine Page](https://portal.azure.com/#blade/Hu
 **In this way you can create a new Azure VM from your local PC Powershell.**
 
 
-#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learnt How to Create Azure VM from Your Local PC Powershell. :diamond_shape_with_a_dot_inside: &nbsp;Happy Learning. :diamond_shape_with_a_dot_inside: &nbsp;
+#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learned How to Create Azure VM from Your Local PC Powershell. :diamond_shape_with_a_dot_inside: &nbsp;Happy Learning. :diamond_shape_with_a_dot_inside: &nbsp;

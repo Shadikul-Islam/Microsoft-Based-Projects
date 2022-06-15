@@ -14,3 +14,7 @@
 | 11 | [Run all of the Script and Check the VM Enviroment](#11) |
 
 ### <a name="01">:diamond_shape_with_a_dot_inside: &nbsp;What is Azure Resource Manager (ARM) Template?</a>
+
+
+
+## This documentation is under construction.

@@ -93,6 +93,8 @@ Let's remind our today's agenda again. Our today's agenda is to provision a Wind
 
 <a href="https://www.WordPress.com](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Modified%20ARM%20Template.json" target="_blank">Click Here</a>
 
+<a href="https://www.w3schools.com" target="_blank">Visit W3Schools.com!</a> 
+
 
 
 

@@ -5,7 +5,7 @@
 | 02 | [What is Desired State Configuration (DSC)?](#02) |
 | 03 | [What is Azure Automation Account?](#03) |
 | 04 | [How to Connect Azure Subscription from Powershell?](#04) | 
-| 05 | [Prepare ARM Template](#05) |
+| 05 | [Prepare ARM Template for VM Provisioning](#05) |
 | 06 | [Automation Account Setup for DSC](#06) |
 | 07 | [DSC Extension in ARM Template](#07) |
 | 08 | [Prepare a DSC Script for Windows VM Environment Configuration <br>- Install IIS <br>- Local User Create and Add into Local Admin Group <br>- Disable Windows Firewall <br>- Install URL Rewrite Module <br>- Install Dotnet <br>- Registry Change: Remove Desktop Wallpaper](#08) |
@@ -89,11 +89,11 @@ Now you will be successfully connected to the Azure Account.
 ### <a name="05">:diamond_shape_with_a_dot_inside: &nbsp;Prepare ARM Template</a>
 Let's remind our today's agenda again. Our today's agenda is to provision a Windows VM using ARM Template and also Configure that VM using DSC. So we need to prepare an ARM Template that can provision a Windows VM. We will provision Windows Server 2019. Let's take help from [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/ps-template). They already provided a sample template for this task. Just we have to modify as we need.
 
-**Modified ARM Template for our VM Provisioning:** [Click Here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Modified%20ARM%20Template.json) to check the Modified ARM Template File.
+**Modified ARM Template for our VM Provisioning:** [Click Here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Modified%20ARM%20Template.json) and open it in a new tab to check the Modified ARM Template File.
 
-<a href="https://www.WordPress.com](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Modified%20ARM%20Template.json" target="_blank">Click Here</a>
+### <a name="06">:diamond_shape_with_a_dot_inside: &nbsp;Automation Account Setup for DSC</a>
 
-<a href="https://www.w3schools.com" target="_blank">Visit W3Schools.com!</a> 
+
 
 
 

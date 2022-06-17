@@ -5,10 +5,10 @@
 | 02 | [What is Desired State Configuration (DSC)?](#02) |
 | 03 | [What is Azure Automation Account?](#03) |
 | 04 | [How to Connect Azure Subscription from Powershell?](#04) | 
-| 05 | [Prepare ARM Template for VM Provisioning](#05) |
+| 05 | [Prepare a DSC Script for Windows VM Environment Configuration <br>- Install IIS <br>- Local User Create and Add into Local Admin Group <br>- Disable Windows Firewall <br>- Install URL Rewrite Module <br>- Install Dotnet <br>- Registry Change: Remove Desktop Wallpaper](#05) |
 | 06 | [Automation Account Setup for DSC](#06) |
-| 07 | [DSC Extension in ARM Template](#07) |
-| 08 | [Prepare a DSC Script for Windows VM Environment Configuration <br>- Install IIS <br>- Local User Create and Add into Local Admin Group <br>- Disable Windows Firewall <br>- Install URL Rewrite Module <br>- Install Dotnet <br>- Registry Change: Remove Desktop Wallpaper](#08) |
+| 07 | [Prepare ARM Template for VM Provisioning](#07) |
+| 08 | [Add DSC Extension in ARM Template](#08) |
 | 09 | [Prepare a Powershell Script to run ARM Template and DSC](#09) |
 | 10 | [All Script in together](#10) |
 | 11 | [Run all of the Script and Check the VM Enviroment](#11) |
@@ -86,14 +86,100 @@ Internet Explorer browser will be opened. Provide the credentials to the browser
 Now you will be successfully connected to the Azure Account.
 <br> <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Install%20Software%20in%20Azure%20VM%20Without%20Going%20Inside%20to%20VM%20Using%20Powershell/Images/Image-2.png" alt="Login Azure Account"> <br><br>
 
-### <a name="05">:diamond_shape_with_a_dot_inside: &nbsp;Prepare ARM Template</a>
+### <a name="05">:diamond_shape_with_a_dot_inside: &nbsp;Prepare ARM Template for VM Provisioning</a>
 Let's remind our today's agenda again. Our today's agenda is to provision a Windows VM using ARM Template and also Configure that VM using DSC. So we need to prepare an ARM Template that can provision a Windows VM. We will provision Windows Server 2019. Let's take help from [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/ps-template). They already provided a sample template for this task. Just we have to modify as we need.
 
 **Modified ARM Template for our VM Provisioning:** 
 
 [Click Here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Modified%20ARM%20Template.json) and open it in a new tab to check the Modified ARM Template File.
 
-### <a name="06">:diamond_shape_with_a_dot_inside: &nbsp;Automation Account Setup for DSC</a>
+### <a name="05">:diamond_shape_with_a_dot_inside: &nbsp;Add DSC Extension in ARM Template</a>
+We need to add DSC Extension in ARM Template. So let's again take help from Microsoft for the DSC Extension Code. This is the Sample DSC Extension Code from [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/dsc-template). We have to just modify the code as we need. We need **registrationKeyPrivate**, **RegistrationUrl** and **NodeConfigurationName** Values. These values we will take from **Automation Account** that already described in Automation Account Step.
+
+**Modified DSC Extension Code for ARM Template:**
+
+````JSON
+{
+  "type": "Microsoft.Compute/virtualMachines/extensions",
+  "name": "[concat(parameters('VMName'), '/Microsoft.Powershell.DSC')]",
+  "apiVersion": "2018-06-01",
+  "location": "[parameters('location')]",
+  "dependsOn": [
+    "[concat('Microsoft.Compute/virtualMachines/', parameters('VMName'))]"
+  ],
+  "properties": {
+    "publisher": "Microsoft.Powershell",
+    "type": "DSC",
+    "typeHandlerVersion": "2.77",
+    "autoUpgradeMinorVersion": true,
+    "protectedSettings": {
+      "Items": {
+        "registrationKeyPrivate": "We will take this value from Automation Account"
+      }
+    },
+    "settings": {
+      "Properties": [
+        {
+          "Name": "RegistrationKey",
+          "Value": {
+            "UserName": "PLACEHOLDER_DONOTUSE",
+            "Password": "PrivateSettingsRef:registrationKeyPrivate"
+          },
+          "TypeName": "System.Management.Automation.PSCredential"
+        },
+        {
+          "Name": "RegistrationUrl",
+          
+          "Value": "We will take this value from Automation Account"
+          "TypeName": "System.String"
+        },
+        {
+          "Name": "NodeConfigurationName",
+          "Value": "We will take this value from Automation Account",
+          "TypeName": "System.String"
+        },
+        {
+        "Name": "ConfigurationMode",
+        "Value": "ApplyAndAutocorrect",
+        "TypeName": "System.String"
+        },
+        {
+        "Name": "ConfigurationModeFrequencyMins",
+        "Value": "15",
+        "TypeName": "System.Int32"
+        },
+        {
+        "Name": "RefreshFrequencyMins",
+        "Value": "30",
+        "TypeName": "System.Int32"
+        },
+        {
+        "Name": "RebootNodeIfNeeded",
+        "Value": true,
+        "TypeName": "System.Boolean"
+        },
+        {
+        "Name": "ActionAfterReboot",
+        "Value": "ContinueConfiguration",
+        "TypeName": "System.String"
+        },
+        {
+        "Name": "AllowModuleOverwrite",
+        "Value": false,
+        "TypeName": "System.Boolean"
+        }       
+      ]
+    }
+  }
+}
+````
+We need to add this code in ARM Template. So our final and complete ARM Template will be:
+
+**Final ARM Template:**
+
+[Click Here]() and open it in a new tab to check the final and complete ARM Template File.
+
+### <a name="08">:diamond_shape_with_a_dot_inside: &nbsp;Automation Account Setup for DSC</a>
 To setup Automation Account we need to follow the following steps:
 
  - Go to [Azure Portal](https://portal.azure.com/#home) --> Search Automation Account and Click to the Automation Account. Click Create then a new page will appear. Provide necessary information and click **Review and Create** then click **Create**.

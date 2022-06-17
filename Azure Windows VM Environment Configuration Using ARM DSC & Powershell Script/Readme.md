@@ -15,7 +15,7 @@
 
 ### <a name="01">:diamond_shape_with_a_dot_inside: &nbsp;What is Azure Resource Manager (ARM) Template?</a>
 Azure Resource Manager (ARM) is an Azure service that you can use as a code paradigm to control and deploy assets using an infrastructure. It allows you to use a number of features to provide, change, and uninstall services, including access controls, tags, and locks. Azure Resource Manager (ARM) is an Azure service that you can use as a code paradigm to control and deploy assets using an infrastructure. It allows you to use a number of features to provide, change, and uninstall services, including access controls, tags, and locks.
-<br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-1.png" alt="Azure Resource Manager"> <br>
+<br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-1.png" alt="Azure Resource Manager"> <br>
 
 **What is an Azure Resource Manager Template?**
 
@@ -89,37 +89,40 @@ Now you will be successfully connected to the Azure Account.
 ### <a name="05">:diamond_shape_with_a_dot_inside: &nbsp;Prepare ARM Template</a>
 Let's remind our today's agenda again. Our today's agenda is to provision a Windows VM using ARM Template and also Configure that VM using DSC. So we need to prepare an ARM Template that can provision a Windows VM. We will provision Windows Server 2019. Let's take help from [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/ps-template). They already provided a sample template for this task. Just we have to modify as we need.
 
-**Modified ARM Template for our VM Provisioning:** [Click Here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Modified%20ARM%20Template.json) and open it in a new tab to check the Modified ARM Template File.
+**Modified ARM Template for our VM Provisioning:** 
+
+[Click Here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Modified%20ARM%20Template.json) and open it in a new tab to check the Modified ARM Template File.
 
 ### <a name="06">:diamond_shape_with_a_dot_inside: &nbsp;Automation Account Setup for DSC</a>
-To setup Automation Account we need to follow these following steps:
+To setup Automation Account we need to follow the following steps:
 
- - Go to [Azure Portal](https://portal.azure.com/#home) --> Search Automation Account and Click to the Automation Account. Click **Create** then a new page will appear. Provide necessery information and **click Review and Create** then click **Create**.
- <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-2.png" alt="Automation Account"> <br>
+ - Go to [Azure Portal](https://portal.azure.com/#home) --> Search Automation Account and Click to the Automation Account. Click Create then a new page will appear. Provide necessary information and click **Review and Create** then click **Create**.
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-2.png" alt="Automation Account"> <br>
  <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-3.png" alt="Automation Account"> <br>
  <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-4.png" alt="Automation Account"> <br>
- - Our Atuomation Account Name is **dsc-automation**. Click on the Automation Account name and go inside of the Auotmation Account.
- - At first, We need to install our necessry Modules that will be needed for compilation the script. Scroll down left side of the page and click **Modules**. We need these following Modules:
+ - Our Automation Account Name is **dsc-automation**. Click on the Automation Account name and go inside the Automation Account.
+ - First, We need to install the necessary modules that will be needed for the compilation of the script. Scroll down the left side of the page and click **Modules**. We need the following Modules:
    1. NetworkingDsc
    2. xSystemSecurity
    3. GraniResource
    4. xPendingReboot
- Click **Browse Gallery** Search of the Modules page. 
- <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-11.png" alt="Automation Account"> <br>
- Search **NetworkingDsc** from the searchbox then click the module name and click **Select** --> Select the Runtime Version from dropdown --> click Import. It will take some moment to Import. In this way we need to install/import all of the above modules.
- <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-12.png" alt="Automation Account"> <br>
- - Now again scroll up from left side of the Automation Account Page and click on the **State Configuration (DSC)** You will see the DSC Configuration for this Automation Account. We can Notice that we didn't add any **Node** yet so no node appear there. As like we will also see nothing in **Configurations**, **Compiled Configurations** tab.
- <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-5.png" alt="Automation Account"> <br>
- - Go to the **Configurations** tab. Click **Add**. A new page will appear. Select the **DSC Script** that we already preared and Provide the Name of the Configuration. In our case Name is **MyVMConfiguration**. Click **Ok**.
- <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-6.png" alt="Automation Account"> <br>
- <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-7.png" alt="Automation Account"> <br>
- Now refresh the page by clicking **Refresh** button. It takes some moment to appear.
- <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-8.png" alt="Automation Account"> <br>
- - Click on the Configuration Name **MyVMConfiguration** and go inside that page. We have to **Compile** the script so just click **Compile** button.
-  <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-9.png" alt="Automation Account"> <br>
- It will take one or two minutes depends on the script. Once it's done then it will show the **Status** is **Completed**.
- <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-10.png" alt="Automation Account"> <br>
- Our Automation Account part has been completed.
+   
+ Click **Browse Gallery** and Search the Modules page. 
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-11.png" alt="Automation Account"> <br><br>
+ Search **NetworkingDsc** from the search box then click the module name and click **Select** --> Select the Runtime Version from dropdown --> click Import. It will take some moment to Import. In this way, we need to install/import all of the above modules.
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-12.png" alt="Automation Account"> <br>
+ - Now again scroll up from the left side of the Automation Account Page and click on the **State Configuration (DSC)** You will see the DSC Configuration for this Automation Account. We can notice that we didn't add any **Node** yet so no node appears there. As like we will also see nothing in the **Configurations**, **Compiled Configurations** tab.
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-5.png" alt="Automation Account"> <br><br>
+ - Go to the **Configurations** tab. Click **Add**. A new page will appear. Select the **DSC Script** that we already prepared and Provide the Name of the Configuration. In our case Name is **MyVMConfiguration**. Click **Ok**.
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-6.png" alt="Automation Account"> <br>
+ <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-7.png" alt="Automation Account"> <br><br>
+ Now refresh the page by clicking the **Refresh** button. It takes some moment to appear.
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-8.png" alt="Automation Account"> <br>
+ - Click on the Configuration Name **MyVMConfiguration** and go inside that page. We have to **Compile** the script so just click the **Compile** button.
+  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-9.png" alt="Automation Account"> <br><br>
+ It will take one or two minutes depending on the script. Once it's done then it will show the **Status** is **Completed**.
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-10.png" alt="Automation Account"> <br><br>
+ Our Automation Account Setup has been completed.
 
 
 

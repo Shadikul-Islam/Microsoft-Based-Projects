@@ -264,7 +264,11 @@ To setup Automation Account we need to follow the following steps:
   <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-9.png" alt="Automation Account"> <br><br>
  It will take one or two minutes depending on the script. Once it's done then it will show the **Status** is **Completed**.
  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-10.png" alt="Automation Account"> <br><br>
- Our Automation Account Setup has been completed.
+ Our Automation Account Setup has been completed. Now we have to save three more values from Automation Account which will be needed ARM Template to connect ARM Template and Automation Account each other. Let's Copy and save that for further use.
+ - In the Automation account page, Scroll down from left side and click on **Keys**. Then Copy the **Primary access key** and **URL** values and save it for furhter use.
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-13.png" alt="Automation Account"> <br><br>
+ - We need one more value which need to save. In the Automation account page, Scroll down from left side and click on **State Configuration DSC** --> Click **Compiled Configuration** --> Here you will see **Node Configuration**. In our case it is **MyVMConfiguration.MyNode**. We also need to copy and save this name **MyVMConfiguration.MyNode** for further use.
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-14.png" alt="Automation Account"> <br><br>
 
 ### <a name="07">:diamond_shape_with_a_dot_inside: &nbsp;Prepare ARM Template for VM Provisioning</a>
 Let's remind our today's agenda again. Our today's agenda is to provision a Windows VM using ARM Template and also Configure that VM using DSC. So we need to prepare an ARM Template that can provision a Windows VM. We will provision Windows Server 2019. Let's take help from [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/ps-template). They already provided a sample template for this task. Just we have to modify as we need.
@@ -275,6 +279,12 @@ Let's remind our today's agenda again. Our today's agenda is to provision a Wind
 
 ### <a name="08">:diamond_shape_with_a_dot_inside: &nbsp;Add DSC Extension in ARM Template</a>
 We need to add DSC Extension in ARM Template. So let's again take help from Microsoft for the DSC Extension Code. This is the Sample DSC Extension Code from [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/dsc-template). We have to just modify the code as we need. We need **registrationKeyPrivate**, **RegistrationUrl** and **NodeConfigurationName** Values. These values we will take from **Automation Account** that already described in Automation Account Step.
+
+**registrationKeyPrivate** = Automation Account **Primary access key**
+
+**RegistrationUrl** Value = Automation Account **URL**
+
+**NodeConfigurationName** Value = **Node Configuration** Value, Which is **MyVMConfiguration.MyNode** in our case.
 
 **Modified DSC Extension Code for ARM Template:**
 

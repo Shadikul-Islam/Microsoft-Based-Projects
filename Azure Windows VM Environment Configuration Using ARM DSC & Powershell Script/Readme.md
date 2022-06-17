@@ -367,7 +367,7 @@ We need to add this code in ARM Template. So our final and complete ARM Template
 
 **Final ARM Template:**
 
-[Click Here]() and open it in a new tab to check the final and complete ARM Template File.
+[Click Here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Final%20ARM%20Template.json) and open it in a new tab to check the final and complete ARM Template File.
 
 
 

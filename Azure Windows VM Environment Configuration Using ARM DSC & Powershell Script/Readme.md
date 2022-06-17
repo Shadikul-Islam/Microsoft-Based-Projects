@@ -94,6 +94,7 @@ We will prepare DSC Script for our Windows VM Configuration and Setup. Today we 
  4. Install URL Rewrite module for IIS
  5. Install Dotnet 4.8
  6. Registry Change: Remove Desktop Wallpaper 
+ 7. Auto Reboot the VM if needed
 
 Let's start from IIS installation.
 

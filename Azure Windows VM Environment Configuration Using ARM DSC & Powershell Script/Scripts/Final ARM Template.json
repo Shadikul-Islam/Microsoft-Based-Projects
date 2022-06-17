@@ -322,7 +322,7 @@
     "autoUpgradeMinorVersion": true,
     "protectedSettings": {
       "Items": {
-        "registrationKeyPrivate": "TuvaLzOi3fCWY4ej4eLEOyOvAuWaCTFrj8J9cKfgslvDsdl/vQuzTwwWXoHrNTS1TUJoOvzOqUAgSmnayHlWbQ==" // Use the primary key of the automation account you are currently using //
+        "registrationKeyPrivate": "Take this value from Automation Account"
       }
     },
     "settings": {
@@ -338,12 +338,12 @@
         {
           "Name": "RegistrationUrl",
           
-          "Value": "https://782c04a5-19c4-4f34-b9b5-781a471c25ff.agentsvc.cus.azure-automation.net/accounts/782c04a5-19c4-4f34-b9b5-781a471c25ff", // Use the URL of the automation account you are currently using //
+          "Value": "Take this value from Automation Account",
           "TypeName": "System.String"
         },
         {
           "Name": "NodeConfigurationName",
-          "Value": "VMConfiguration.wapi", // Insart the specific config file that you want to use in deployment //
+          "Value": "Take this value from Automation Account",
           "TypeName": "System.String"
         },
         {

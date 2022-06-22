@@ -371,11 +371,53 @@ We need to add this code in ARM Template. So our final and complete ARM Template
 [Click Here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Final%20ARM%20Template.json) and open it in a new tab to check the final and complete ARM Template File.
 
 
+### <a name="09">:diamond_shape_with_a_dot_inside: &nbsp;Prepare a Powershell Script to run ARM Template and DSC</a>
+We have the ARM Template and DSC Script. So now we need a PowerShell script that will call this ARM Template. This Powershell script will take different types of the necessary information to create a VM from Azure. We need to provide those values when we will run that script.
+
+**Powershell Script:** 
+
+````Powershell
+$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
+$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
+$adminUsername = Read-Host -Prompt "Enter the administrator username"
+$adminPassword = Read-Host -Prompt "Enter the administrator password" -AsSecureString
+$vmName = Read-Host -Prompt "Enter the Virtual Machine name"
+$dnsLabelPrefix=-join ( (97..122) | Get-Random -Count 12 | % {[char]$_})
+$virtualNetworkName = "${vmName}VNet"
+$networkSecurityGroupName = "${vmName}SG"
+$subnetName = "${vmName}sbnet"
+
+New-AzResourceGroup -Name $resourceGroupName -Location "$location"
+New-AzResourceGroupDeployment `
+    -ResourceGroupName $resourceGroupName `
+    -TemplateFile 'Final_ARM_Template.json' `
+    -adminUsername $adminUsername `
+    -adminPassword $adminPassword `
+    -dnsLabelPrefix $dnsLabelPrefix `
+    -vmName $vmName `
+    -virtualNetworkName $virtualNetworkName `
+    -networkSecurityGroupName $networkSecurityGroupName `
+    -subnetName $subnetName
+
+ (Get-AzVm -ResourceGroupName $resourceGroupName).name
+ Get-AzPublicIpAddress -ResourceGroupName $ResourceGroupName | Select IpAddress
+ 
+````
 
 
+### <a name="10">:diamond_shape_with_a_dot_inside: &nbsp;All Script in together</a>
+Let's see the flow chart how all script will conncect each other. Our total script is three:
+ 1. Powershell Script
+ 2. ARM Template
+ 3. DSC Script
 
+First, We will compile DSC script in Automation account that we described in [Step-06](#06) --> Then we will run the Powershell script from Powershell ISE or VS Code or anywhere your wish --> In powershell script you can notice that we call the Final ARM Template file --> In the ARM template file we provided the necessery information of the Automation account where we compiled the DSC Script that we described in [Step-08](#08) --> In this way the all script are inter-connected and provision a vm with necessery configuration/setup that we told in DSC Script.
 
+All Script Link is below. Open them in your browser new tab to check.
 
+ 1. [Powershell Script](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Powershell%20Script.ps1)
+ 2. [Final ARM Template](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Final_ARM_Template.json)
+ 3. [DSC Script](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/DSC%20Script.ps1)
 
 
 ## This documentation is under construction.

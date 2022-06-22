@@ -242,7 +242,5 @@ configuration MyVMConfiguration
              Name = "RebootCheck"
          }
 
-
-
     }
 }

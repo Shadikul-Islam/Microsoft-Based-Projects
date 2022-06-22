@@ -14,7 +14,7 @@
 | 11 | [Run all of the Script and Check the VM Enviroment](#11) |
 
 ### <a name="01">:diamond_shape_with_a_dot_inside: &nbsp;What is Azure Resource Manager (ARM) Template?</a>
-Azure Resource Manager (ARM) is an Azure service that you can use as a code paradigm to control and deploy assets using an infrastructure. It allows you to use a number of features to provide, change, and uninstall services, including access controls, tags, and locks. Azure Resource Manager (ARM) is an Azure service that you can use as a code paradigm to control and deploy assets using an infrastructure. It allows you to use a number of features to provide, change, and uninstall services, including access controls, tags, and locks.
+Azure Resource Manager (ARM) is an Azure service that you can use as a code paradigm to control and deploy assets using an infrastructure. It allows you to use a number of features to provide, change, and uninstall services, including access controls, tags, and locks. ARM (Azure Resource Manager) template is a block of code that defines the infrastructure and configuration for your project. These templates use a declarative syntax to let you define your deployment in the form of JSON (JavaScript Object Notation) files. All the resources and their properties are defined in this template. This helps in automating the deployment process in a constant flow
 <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-1.png" alt="Azure Resource Manager"> <br>
 
 **What is an Azure Resource Manager Template?**
@@ -25,7 +25,7 @@ Each Azure resource (virtual machine, storage account, etc.) can be deployed by 
 Desired State Configuration (DSC) is an essential part of the configuration, management and maintenance of Windows-based servers. It allows a PowerShell script to specify the configuration of the machine using a declarative model in a simple standard way that is easy to maintain and understand. DSC gives us a declarative model for system configuration management. What that really means is that we can specify how we want a workstation or server (a ‘node’) to be configured and we leave it to PowerShell and the Windows Workflow engine to make it happen on those target ‘nodes’. We don’t have to specify how we want it to happen.
 
 The main advantages of DSC are:
- - To simplify your sysadmin taks by configuring one or more devices automatically
+ - To simplify your sysadmin tasks by configuring one or more devices automatically
  - To be able to configure machines identically with the aim to standardise them
  - To ensure, at a given time, that the configuration of a machine always be identical to its initial configuration, so as to avoid drift
  - Deployment on demand as a Cloud strategy, or ‘en masse’, is largely automated and simplified
@@ -228,7 +228,7 @@ Let's start with IIS installation.
          }
  ````
 
-We need to add the configuration name and node with proper DSC format then need to add these above codes. So our final DSC script will be:
+We need to add the configuration name and node with proper DSC format then need to add those above codes. So our final DSC script will be:
 
 **Final DSC Script:**
 
@@ -239,7 +239,7 @@ You can notice that our configuration name is **MyVMConfiguration** and Node nam
 ### <a name="06">:diamond_shape_with_a_dot_inside: &nbsp;Automation Account Setup for DSC</a>
 To setup Automation Account we need to follow the following steps:
 
- - Go to [Azure Portal](https://portal.azure.com/#home) --> Search Automation Account and Click to the Automation Account. Click Create then a new page will appear. Provide necessary information and click **Review and Create** then click **Create**.
+ - Go to [Azure Portal](https://portal.azure.com/#home) --> Search Automation Account and Click to the Automation Account. Click **Create** then a new page will appear. Provide necessary information and click **Review and Create** then click **Create**.
  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-2.png" alt="Automation Account"> <br>
  <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-3.png" alt="Automation Account"> <br>
  <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-4.png" alt="Automation Account"> <br>
@@ -252,9 +252,9 @@ To setup Automation Account we need to follow the following steps:
    
  Click **Browse Gallery** and Search the Modules page. 
  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-11.png" alt="Automation Account"> <br><br>
- Search **NetworkingDsc** from the search box then click the module name and click **Select** --> Select the Runtime Version from dropdown --> click Import. It will take some moment to Import. In this way, we need to install/import all of the above modules.
+ Search **NetworkingDsc** from the search box then click the module name and click **Select** --> Select the **Runtime Version** from dropdown --> click **Import**. It will take some moment to Import. In this way, we need to install/import all of the above modules.
  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-12.png" alt="Automation Account"> <br>
- - Now again scroll up from the left side of the Automation Account Page and click on the **State Configuration (DSC)** You will see the DSC Configuration for this Automation Account. We can notice that we didn't add any **Node** yet so no node appears there. As like we will also see nothing in the **Configurations**, **Compiled Configurations** tab.
+ - Now again scroll up from the left side of the Automation Account Page and click on the **State Configuration (DSC)**. You will see the DSC Configuration for this Automation Account. We can notice that we didn't add any **Node** yet so no node appears there. As like we will also see nothing in the **Configurations**, **Compiled Configurations** tab.
  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-5.png" alt="Automation Account"> <br><br>
  - Go to the **Configurations** tab. Click **Add**. A new page will appear. Select the **DSC Script** that we already prepared and Provide the Name of the Configuration. In our case Name is **MyVMConfiguration**. Click **Ok**.
  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-6.png" alt="Automation Account"> <br>
@@ -279,7 +279,7 @@ Let's remind our today's agenda again. Our today's agenda is to provision a Wind
 [Click Here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Modified%20ARM%20Template.json) and open it in a new tab to check the Modified ARM Template File.
 
 ### <a name="08">:diamond_shape_with_a_dot_inside: &nbsp;Add DSC Extension in ARM Template</a>
-We need to add DSC Extension in the ARM Template. So let's again take help from Microsoft for the DSC Extension Code. This is the Sample DSC Extension Code from [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/dsc-template). We have to just modify the code as we need. We need **registrationKeyPrivate**, **RegistrationUrl** and **NodeConfigurationName** Values. These values we will take from **Automation Account** that are already described in the Automation Account Step.
+We need to add DSC Extension in the ARM Template. So let's again take help from Microsoft for the DSC Extension Code. This is the Sample DSC Extension Code from [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/dsc-template). We have to just modify the code as we need. We need **registrationKeyPrivate**, **RegistrationUrl** and **NodeConfigurationName** Values. These values we will take from **Automation Account** that are already described in the [Automation Account Step](#06).
 
 **registrationKeyPrivate** = Automation Account **Primary access key**
 
@@ -368,7 +368,7 @@ We need to add this code in ARM Template. So our final and complete ARM Template
 
 **Final ARM Template:**
 
-[Click Here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Final%20ARM%20Template.json) and open it in a new tab to check the final and complete ARM Template File.
+[Click Here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Final_ARM_Template.json) and open it in a new tab to check the final and complete ARM Template File.
 
 
 ### <a name="09">:diamond_shape_with_a_dot_inside: &nbsp;Prepare a Powershell Script to run ARM Template and DSC</a>
@@ -411,7 +411,7 @@ Let's see the flow chart of how all scripts will connect to each other. Our tota
  2. ARM Template
  3. DSC Script
 
-First, We will compile the DSC script in the Automation account that we described in [Step-06](#06) --> Then we will run the Powershell script from Powershell ISE or VS Code or anywhere your wish --> In the PowerShell script, you can notice that we call the Final ARM Template file --> In the ARM template file we provided the necessary information of the Automation account where we compiled the DSC Script that we described in [Step-08](#08) --> In this way the all script are inter-connected and provision a VM with necessary configuration/setup that we told in DSC Script.
+First, We will compile the DSC script in the Automation account that we described in the [Automation Account Setup for DSC Step](#06) --> Then we will run the Powershell script from Powershell ISE or VS Code or anywhere your wish --> In the PowerShell script, you can notice that we call the Final ARM Template file --> In the ARM template file we provided the necessary information of the Automation account where we compiled the DSC Script that we described in the [Add DSC Extension in ARM Template Step](#08) --> In this way the all script are inter-connected and provision a VM with necessary configuration/setup that we told in DSC Script.
 
 All Script Link is below. Open them in your browser's new tab to check.
 
@@ -422,29 +422,29 @@ All Script Link is below. Open them in your browser's new tab to check.
 ### <a name="11">:diamond_shape_with_a_dot_inside: &nbsp;Run the Script and Check the VM Enviroment</a>
 **Let's run the Powershell Script:**
 
-Before running the script make sure that you provided the **registrationKeyPrivate**, **RegistrationUrl** and **NodeConfigurationName** in ARM Template from Automation Account. More details you can check [Step-08](#08).
+Before running the script make sure that you provided the **registrationKeyPrivate**, **RegistrationUrl** and **NodeConfigurationName** in ARM Template from Automation Account. More details you can check [Add DSC Extension in ARM Template Step](#08).
 
  1. We are going to open the PowerShell script in **Powershell ISE**. Then run the Script. Provide the necessary values that are asked from Powershell ISE. Then it will create a Resource group first.
- <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-15.png" alt="Run Script"> <br>
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-15.png" alt="Run Script"> <br> <br>
  2. Then it will create a VM then it will apply the DSC. It will take 10-15 minutes depending on the DSC. After completion, it will show all the details in Powershell ISE.
- <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-16.png" alt="Run Script"> <br>
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-16.png" alt="Run Script"> <br> <br>
  3. Our VM is provisioned now, let's RDP the VM and check the configuration that we told on DSC.
   - **IIS Installation**: On the search box type IIS and hit Enter to open the IIS.
-   <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-17.png" alt="Check the Configuration"> <br>
+   <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-17.png" alt="Check the Configuration"> <br> <br>
   - **URL Rewrite Module**: On IIS click the VM name from the left side and you will see the URL Rewrite Module.
-   <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-18.png" alt="Check the Configuration"> <br>
+   <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-18.png" alt="Check the Configuration"> <br> <br>
   - **Local User**: Type **Add, edit, or remove other users** from the search box --> Go to Users settings --> Click **Add someone else to this PC** --> Click **Users** --> You will see all of the users. Our local user name is **MyLocalUser**. Which is already there. Double click on the **MyLocalUser** and click **Members of**. This user has been added to the Local Administrator Group.
-  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-19.png" alt="Check the Configuration"> <br>
+  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-19.png" alt="Check the Configuration"> <br> <br>
   - **Disable Firewall**: Type **Firewall** on Searchbox and open Windows Firewall you will see all firewall options have been turned off.
-  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-20.png" alt="Check the Configuration"> <br>
+  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-20.png" alt="Check the Configuration"> <br> <br>
   - **Dot Net 4.8 Installation**: Open Powershell and run this command ````reg query "HKLM\SOFTWARE\Microsoft\Net Framework Setup\NDP" /s````. You will see the version of the dotnet.
-  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-21.png" alt="Check the Configuration"> <br>
-  - **Registry Change: Remove Desktop Wallpaper**: Type **Registry Editor** on search box and go to registry Editor --> Go to this location: **HKLM:SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services** --> You can see that **fNoRemoteDesktopWallpaper** value is **1**. 
-  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-22.png" alt="Check the Configuration"> <br>
-  Also, you can see the effect of this registry change. It will show a Black Desktop Wallpaper that I guess you already noticed on the VM.
-  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-23.png" alt="Check the Configuration"> <br>
+  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-21.png" alt="Check the Configuration"> <br> <br>
+  - **Registry Change:- Remove Desktop Wallpaper**: Type **Registry Editor** on search box and go to registry Editor --> Go to this location: **HKLM:SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services** --> You can see that **fNoRemoteDesktopWallpaper** value is **1**. 
+  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-22.png" alt="Check the Configuration"> <br> <br>
+  Also, you can see the effect of this registry change. It will show a **Black Desktop Wallpaper** that I guess you already noticed on the VM.
+  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-23.png" alt="Check the Configuration"> <br> <br>
   - **Reboot if needed**: When all of the Configuration will be applied then if any Reboot is needed to work properly with the configuration then it will reboot VM. For example, after installing Dotnet 4.8 VM needs to reboot to take effect.
 
-So we can see that our all configuration has been working properly. Our project is ready.
+So we can see that our VM has been provisioned and all configuration has been working properly. Our project is ready.
 
 #### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learned How to Create an Azure Windows VM and Configure/Setup that VM Environment Using ARM, DSC & Powershell Script. Happy Learning.  :diamond_shape_with_a_dot_inside: &nbsp;

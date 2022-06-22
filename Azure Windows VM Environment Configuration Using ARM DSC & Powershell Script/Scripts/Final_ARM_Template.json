@@ -322,7 +322,7 @@
     "autoUpgradeMinorVersion": true,
     "protectedSettings": {
       "Items": {
-        "registrationKeyPrivate": "Take this value from Automation Account"
+        "registrationKeyPrivate": "3uo4KZ3PQJ/v2xxnD2s+4V+mLZ4wYErzkgIz4H82NqKNyW6z7Bn/FcE0tt7BRBVJUvpFDu0EXgJQTHIg+iN0Tw=="
       }
     },
     "settings": {
@@ -338,12 +338,12 @@
         {
           "Name": "RegistrationUrl",
           
-          "Value": "Take this value from Automation Account",
+          "Value": "https://0c4583d6-acd0-41f9-a341-9adfd282b20d.agentsvc.cus.azure-automation.net/accounts/0c4583d6-acd0-41f9-a341-9adfd282b20d",
           "TypeName": "System.String"
         },
         {
           "Name": "NodeConfigurationName",
-          "Value": "Take this value from Automation Account",
+          "Value": "MyVMConfiguration.MyNode",
           "TypeName": "System.String"
         },
         {

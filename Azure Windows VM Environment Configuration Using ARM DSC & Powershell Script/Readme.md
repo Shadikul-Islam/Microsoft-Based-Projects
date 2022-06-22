@@ -87,7 +87,7 @@ Now you will be successfully connected to the Azure Account.
 <br> <br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Install%20Software%20in%20Azure%20VM%20Without%20Going%20Inside%20to%20VM%20Using%20Powershell/Images/Image-2.png" alt="Login Azure Account"> <br><br>
 
 ### <a name="05">:diamond_shape_with_a_dot_inside: &nbsp;Prepare a DSC Script for Windows VM Environment Configuration</a>
-We will prepare DSC Script for our Windows VM Configuration and Setup. Today we will configure/setup these following things:
+We will prepare DSC Script for our Windows VM Configuration and Setup. Today we will configure/setup the following things:
  1. Install IIS
  2. Local User Create and Add into Admin Group
  3. Disable Windows Firewall 
@@ -96,7 +96,7 @@ We will prepare DSC Script for our Windows VM Configuration and Setup. Today we 
  6. Registry Change: Remove Desktop Wallpaper 
  7. Auto Reboot the VM if needed
 
-Let's start from IIS installation.
+Let's start with IIS installation.
 
  1. **Install IIS:**
  ````POWERSHELL
@@ -279,7 +279,7 @@ Let's remind our today's agenda again. Our today's agenda is to provision a Wind
 [Click Here](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Modified%20ARM%20Template.json) and open it in a new tab to check the Modified ARM Template File.
 
 ### <a name="08">:diamond_shape_with_a_dot_inside: &nbsp;Add DSC Extension in ARM Template</a>
-We need to add DSC Extension in ARM Template. So let's again take help from Microsoft for the DSC Extension Code. This is the Sample DSC Extension Code from [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/dsc-template). We have to just modify the code as we need. We need **registrationKeyPrivate**, **RegistrationUrl** and **NodeConfigurationName** Values. These values we will take from **Automation Account** that already described in Automation Account Step.
+We need to add DSC Extension in the ARM Template. So let's again take help from Microsoft for the DSC Extension Code. This is the Sample DSC Extension Code from [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/dsc-template). We have to just modify the code as we need. We need **registrationKeyPrivate**, **RegistrationUrl** and **NodeConfigurationName** Values. These values we will take from **Automation Account** that are already described in the Automation Account Step.
 
 **registrationKeyPrivate** = Automation Account **Primary access key**
 

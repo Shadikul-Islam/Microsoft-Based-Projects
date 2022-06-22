@@ -419,5 +419,32 @@ All Script Link is below. Open them in your browser new tab to check.
  2. [Final ARM Template](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/Final_ARM_Template.json)
  3. [DSC Script](https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Scripts/DSC%20Script.ps1)
 
+### <a name="11">:diamond_shape_with_a_dot_inside: &nbsp;Run the Script and Check the VM Enviroment</a>
+**Let's run the Powershell Script:**
 
-## This documentation is under construction.
+Before running the script make sure that you provided the **registrationKeyPrivate**, **RegistrationUrl** and **NodeConfigurationName** in ARM Template from Automation Account. More details you can check [Step-08](#08).
+
+ 1. We are going to open the powershell script in **Powershell ISE**. Then run the Script. Provide the necessery values that asked from Powershell ISE. Then it will create a Resource group first.
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-15.png" alt="Run Script"> <br>
+ 2. Then it will create a VM then it will apply the DSC. It will take 10-15 minutes depends on the DSC. After completion it will show all the details in Powershell ISE.
+ <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-16.png" alt="Run Script"> <br>
+ 3. Our VM is provisioned now, let's RDP the VM and check the configuration that we told on DSC.
+  - **IIS Installation**: On the search box type IIS and hit Enter to open the IIS.
+   <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-17.png" alt="Check the Configuration"> <br>
+  - **URL Rewrite Module**: On IIS click the VM name from the left side and you will see the URL Rewrite Module.
+   <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-18.png" alt="Check the Configuration"> <br>
+  - **Local User**: Type **Add, edit, or remove other users** from the search box --> Go to Users settings --> Click **Add someone else to this PC** --> Click **Users** --> You will see all of the users. Our local user name is **MyLocalUser**. Which is already there. Double click on the **MyLocalUser** and click **Members of**. This user has been added into Local Adminstrator Group.
+  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-19.png" alt="Check the Configuration"> <br>
+  - **Disable Firewall**: Type **Firewall** on Searchbox and open Windows Firewall you will see all firewall options has been turend off.
+  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-20.png" alt="Check the Configuration"> <br>
+  - **Dot Net 4.8 Installation**: Open Powershell and run this command ````reg query "HKLM\SOFTWARE\Microsoft\Net Framework Setup\NDP" /s````. You will see the version of the dotnet.
+  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-21.png" alt="Check the Configuration"> <br>
+  - **Registry Change: Remove Desktop Wallpaper**: Type **Registry Editor** on search box and go to registry Editor --> Go to this location: **HKLM:SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services** --> You can see that **fNoRemoteDesktopWallpaper** value is **1**. 
+  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-22.png" alt="Check the Configuration"> <br>
+  Also you can see the effect of this registry change. It will show a Black Desktop Wallpaper that I guess you already noticed on the VM.
+  <br><br> <img src= "https://github.com/Shadikul-Islam/Microsoft-Based-Projects/blob/master/Azure%20Windows%20VM%20Environment%20Configuration%20Using%20ARM%20DSC%20%26%20Powershell%20Script/Images/Image-23.png" alt="Check the Configuration"> <br>
+  - **Reboot if needed**: When all of the Configuration will be applied then if any Reboot needed to work properly the configuration then it will reboot VM. For example after installing Dotnet 4.8 VM need to reboot to take effect.
+
+So we can see that our all configuration has been working properly. Our project is ready.
+
+#### :diamond_shape_with_a_dot_inside: &nbsp;That’s it. We have learned How to Configure/Setup Azure Windows VM Environment Using ARM, DSC & Powershell Script. Happy Learning.  :diamond_shape_with_a_dot_inside: &nbsp;
